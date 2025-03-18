@@ -1,11 +1,10 @@
-﻿{
-  
+﻿{ 
     "usernameadmin"
     :
     "admin",
     "password"
     :
-    "Test@123",
+    "Sabir@123",
     "url"
     :
     "http://49.249.28.218:8081/AppServer/Online_Couple_Marriage_Registration_System/",
@@ -14,8 +13,6 @@
     :
     "chrome",
 
-  "usernameuser": 1234567890
-      
- 
-  
-}
+    "usernameuser": 8584929333,
+    "module" : "user"
+ }

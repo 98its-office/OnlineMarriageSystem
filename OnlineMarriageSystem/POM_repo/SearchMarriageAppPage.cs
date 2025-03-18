@@ -15,7 +15,11 @@ namespace OnlineMarriageSystem.POM_repo
         [FindsBy(How = How.Id, Using = "search")]
         private IWebElement submitbutton;
 
+        [FindsBy(How =How.XPath,Using = "//tbody//a")]
+        private IWebElement icon;
+
         public IWebElement SearchbyRegnotextfield { get => searchbyRegnotextfield; set => searchbyRegnotextfield = value; }
         public IWebElement Submitbutton { get => submitbutton; set => submitbutton = value; }
+        public IWebElement Icon { get => icon; set => icon = value; }
     }
 }
