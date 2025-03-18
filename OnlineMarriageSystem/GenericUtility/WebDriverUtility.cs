@@ -2,8 +2,6 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-
-
 namespace TestProject1_nunit.Framework.Framework_GenericUtility
 {
     internal class WebDriverUtility
@@ -16,18 +14,18 @@ namespace TestProject1_nunit.Framework.Framework_GenericUtility
         {
             driver.Manage().Window.Minimize();
         }
-        public void ImplicitwaitElements(IWebDriver driver)
+        public void ImplicitwaitElements(IWebDriver driver,int sec)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(IPathConstants.sec);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(sec);
         }
-        public void ExplicitwaitElementsClickable(IWebDriver driver, By element)
+        public void ExplicitwaitElementsClickable(IWebDriver driver, By element, int sec)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(IPathConstants.sec));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
             wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
-        public void ExplicitwaitElementsVisible(IWebDriver driver, By element )
+        public void ExplicitwaitElementsVisible(IWebDriver driver, By element, int sec )
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(IPathConstants.sec));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
             wait.Until(ExpectedConditions.ElementIsVisible(element));
         }
         public void ToHandleDropdown(IWebElement element, string text)
@@ -61,12 +59,12 @@ namespace TestProject1_nunit.Framework.Framework_GenericUtility
         {
             driver.SwitchTo().ParentFrame();
         }
-        public void ToMouseHover(IWebDriver driver, WebElement element)
+        public void ToMouseHover(IWebDriver driver, IWebElement element)
         {
             Actions act = new Actions(driver);
             act.MoveToElement(element).Perform();
         }
-        public void ToperformRightClick(IWebDriver driver, WebElement element)
+        public void ToperformRightClick(IWebDriver driver, IWebElement element)
         {
             Actions act = new Actions(driver);
             act.ContextClick(element).Perform();

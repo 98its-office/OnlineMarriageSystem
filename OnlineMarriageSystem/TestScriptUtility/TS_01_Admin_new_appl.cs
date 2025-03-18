@@ -1,27 +1,27 @@
 ﻿using OnlineMarriageSystem.GenericUtility;
 using OnlineMarriageSystem.POM_repo;
 using OpenQA.Selenium;
-using TestProject1_nunit.Framework.Framework_GenericUtility;
 
 namespace OnlineMarriageSystem.TestScriptUtility
 {
-    class TS_01_Admin_new_appl :BaseforUser
+    class TS_01_Admin_new_appl :BaseForAdmin
     {
         [Test]
         public void applnew()
         {
-            WebDriverUtility webutil = new WebDriverUtility();
-            HomePage hp = new HomePage(driver);
+            AdminHomePage hp = new AdminHomePage(driver);
         //    driver.FindElement(By.XPath(""))
-            webutil.ExplicitwaitElementsClickable(driver,By.XPath("//a[contains(text(),'New')]"));
+            wbutil.ExplicitwaitElementsClickable(driver,By.XPath("//a[contains(text(),'New')]"),9);
             hp.Newapplicationlink.Click();
-            hp.Infoeyeicon.Click();
+            hp.Newapplinfoeyeicon.Click();
             ViewMarriageAppPage view = new ViewMarriageAppPage(driver);
-            
-            webutil.ScrolltoViewUsingJavaScriptExecutor(driver, view.TakeActionbutton1);
+
+            wbutil.ScrolltoViewUsingJavaScriptExecutor(driver, view.TakeActionbutton1);
             view.TakeActionbutton1.Click();
             view.Remarkstextfield.SendKeys("rejected");
-            webutil.ToHandleDropdown(view.Statusdropdown, "Rejected");
+            Thread.Sleep(2000);
+            wbutil.ToHandleDropdown(view.Statusdropdown, "Rejected");
+            Thread.Sleep(2000);
             view.Closebutton.Click();
         }
     }

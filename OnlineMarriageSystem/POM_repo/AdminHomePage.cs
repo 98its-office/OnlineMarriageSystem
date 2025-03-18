@@ -3,9 +3,9 @@ using SeleniumExtras.PageObjects;
 
 namespace OnlineMarriageSystem.POM_repo
 {
-    class HomePage
+    class AdminHomePage
     {
-        public HomePage(IWebDriver driver)
+        public AdminHomePage(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
         }
@@ -16,7 +16,13 @@ namespace OnlineMarriageSystem.POM_repo
         private IWebElement newapplicationlink;
 
         [FindsBy(How = How.XPath, Using = "//a[contains(@href,'id=3')]")]
-        private IWebElement infoeyeicon;
+        private IWebElement newapplinfoeyeicon;
+
+        [FindsBy(How = How.XPath, Using = "//td[text()='1']/..//i[@class='fa fa-eye']")]
+        private IWebElement verifiedmarriageeyeicon;
+
+        [FindsBy(How = How.XPath, Using = "//td[text()='1']/..//i[@class='fa fa-eye']")]
+        private IWebElement rejectedmarriageeyeicon;
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Verified')]")]
         private IWebElement verifiedapplicationlink;
@@ -38,12 +44,15 @@ namespace OnlineMarriageSystem.POM_repo
 
         public IWebElement Headerwelcomepg { get => headerwelcomepg; set => headerwelcomepg = value; }
         public IWebElement Newapplicationlink { get => newapplicationlink; set => newapplicationlink = value; }
-        public IWebElement Infoeyeicon { get => infoeyeicon; set => infoeyeicon = value; }
+        
         public IWebElement Verifiedapplicationlink { get => verifiedapplicationlink; set => verifiedapplicationlink = value; }
         public IWebElement Rejectedapplicationlink { get => rejectedapplicationlink; set => rejectedapplicationlink = value; }
         public IWebElement Reportlink { get => reportlink; set => reportlink = value; }
         public IWebElement Searchlink { get => searchlink; set => searchlink = value; }
         public IWebElement Admindropdown { get => admindropdown; set => admindropdown = value; }
         public IWebElement Signoutlink { get => signoutlink; set => signoutlink = value; }
+        public IWebElement Newapplinfoeyeicon { get => newapplinfoeyeicon; set => newapplinfoeyeicon = value; }
+        public IWebElement Verifiedmarriageeyeicon { get => verifiedmarriageeyeicon; set => verifiedmarriageeyeicon = value; }
+        public IWebElement Rejectedmarriageeyeicon { get => rejectedmarriageeyeicon; set => rejectedmarriageeyeicon = value; }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OnlineMarriageSystem.GenericUtility;
+﻿using OnlineMarriageSystem.GenericUtility;
 using OnlineMarriageSystem.POM_repo;
 using TestProject1_nunit.Framework.Framework_GenericUtility;
 
@@ -11,13 +6,12 @@ namespace OnlineMarriageSystem.TestScriptUtility
 {
     internal class UserTestScript:BaseforUser
     {
-
         [Test]
         public void Registration()
         {
             UserHomePage uhp=new UserHomePage(driver);
             uhp.RegistrationLink.Click();
-            RegistrationPage rp=new RegistrationPage(driver);
+            UserRegistrationPage rp=new UserRegistrationPage(driver);
             rp.DateOfMarraigeTextField.SendKeys(ex.ToreadfromExcel("Husb", 2, 1));
             rp.HusbandNameTextField.SendKeys(ex.ToreadfromExcel("Husb", 2, 2));
             rp.HImage.SendKeys(IPathConstants.husbImagePath);

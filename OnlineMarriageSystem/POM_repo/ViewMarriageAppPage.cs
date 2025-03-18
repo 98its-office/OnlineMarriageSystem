@@ -9,6 +9,9 @@ namespace OnlineMarriageSystem.POM_repo
         {
             PageFactory.InitElements(driver, this);
         }
+        [FindsBy(How = How.XPath, Using = ("//td[contains(text(),'Husband')]"))]
+        private IWebElement husbanddetailstext;
+
         [FindsBy(How = How.XPath, Using = "//button[text()='Take Action']")]
         private IWebElement TakeActionbutton;
 
@@ -29,5 +32,6 @@ namespace OnlineMarriageSystem.POM_repo
         public IWebElement Statusdropdown { get => statusdropdown; set => statusdropdown = value; }
         public IWebElement Closebutton { get => closebutton; set => closebutton = value; }
         public IWebElement Updatebutton { get => updatebutton; set => updatebutton = value; }
+        public IWebElement Husbanddetailstext { get => husbanddetailstext; set => husbanddetailstext = value; }
     }
 }

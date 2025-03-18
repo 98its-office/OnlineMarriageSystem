@@ -14,11 +14,11 @@ namespace OnlineMarriageSystem.GenericUtility
     {
        public IWebDriver driver;
        internal WebDriverUtility web= new WebDriverUtility();
-       internal ExcelFileUtility ex=new ExcelFileUtility();
-       internal JsonUtility js= new JsonUtility();
+       internal ExcelFileUtility ex=new ExcelFileUtility();  
+        internal JsonUtility js = new JsonUtility();
        internal C_Utility c=new C_Utility();
         ExtentReports extent;
-        SigninPage sp;
+        internal SigninPage sp;
         UserHomePage uhp;
         ExtentTest test;
         string testName;
@@ -43,7 +43,7 @@ namespace OnlineMarriageSystem.GenericUtility
 
             web.ToMaximize(driver);
             driver.Url = js.ToReadfromjson("url");
-            web.ImplicitwaitElements(driver);
+            web.ImplicitwaitElements(driver,7);
 
             //extent report
             string path = "C:\\Users\\ranja\\source\\repos\\OnlineMarriageSystem\\OnlineMarriageSystem\\Report\\" + "repor" + c.Randnum() + ".html";

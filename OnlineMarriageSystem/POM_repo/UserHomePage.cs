@@ -21,8 +21,8 @@ namespace OnlineMarriageSystem.POM_repo
         [FindsBy(How=How.LinkText,Using = "Search")]
         private IWebElement searchLink;
 
-        [FindsBy(How =How.XPath, Using = "//img[@src='img/images.png']")]
-        private IWebElement userIcon;
+        //[FindsBy(How =How.XPath, Using = "//img[@src='img/images.png']")]
+        //private IWebElement userIcon;
 
         [FindsBy(How=How.XPath, Using = "href=\"logout.php\"")]
         private IWebElement logoutButton;
@@ -31,13 +31,13 @@ namespace OnlineMarriageSystem.POM_repo
         public IWebElement RegistrationLink { get => registrationLink; set => registrationLink = value; }
         public IWebElement MarraigeApplication { get => marraigeApplication; set => marraigeApplication = value; }
         public IWebElement SearchLink { get => searchLink; set => searchLink = value; }
-        public IWebElement UserIcon { get => userIcon; set => userIcon = value; }
+        //public IWebElement UserIcon { get => userIcon; set => userIcon = value; }
         public IWebElement LogoutButton { get => logoutButton; set => logoutButton = value; }
 
         //Businnes Library
         public void LogoutAsUser() 
         { 
-            UserIcon.Click();
+           // UserIcon.Click();
             LogoutButton.Click();
         }
     }

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
 namespace OnlineMarriageSystem.POM_repo
 {
-    internal class RegistrationPage
+    internal class UserRegistrationPage
     {
-        public RegistrationPage(IWebDriver driver) 
+        public UserRegistrationPage(IWebDriver driver) 
         {
             PageFactory.InitElements(driver, this);
         }
